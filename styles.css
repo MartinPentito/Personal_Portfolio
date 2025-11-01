@@ -106,22 +106,23 @@ a, button, .resume-btn, .nav-link, .mobile-link {
   50% { opacity: 0; }
 }
 /* SKILLS CAROUSEL */
-.skills-carousel { padding: 0.5rem 0; }
+.skills-carousel {
+  padding: 0.5rem 0;
+  overflow: hidden;
+  width: 100%;
+}
+
 .skills-track {
   display: flex;
   gap: 1.5rem;
   align-items: center;
-  /* animate translateX to create marquee */
-  animation: marquee 3.5s linear infinite;
-}
-
-.skills-carousel:hover .skills-track {
-  animation-play-state: paused;
+  animation: marquee 30s linear infinite;
+  width: fit-content;
 }
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-40%); }
+  100% { transform: translateX(-50%); } /* Solo se mueve la mitad porque tenemos elementos duplicados */
 }
 
 /* make carousel take full width on small screens and appear below image */
