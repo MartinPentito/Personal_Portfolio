@@ -96,6 +96,25 @@ a, button, .resume-btn, .nav-link, .mobile-link {
   transition: color 0.3s ease;
 }
 
+/* TYPING EFFECT */
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* TYPING EFFECT */
+.typing-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 /* CONTACT */
 .contact-col:hover span { color:white; border-color:white; }
 
