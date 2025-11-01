@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- ✅ NAV -->
+    <!-- (pegar aquí el navbar completo mostrado arriba) -->
+    <nav class="w-full z-[999999] transition-all duration-300">
+        <div class="flex justify-between items-center px-[8%] lg:px-[16%] py-6">
+            <a href="index.html" class="text-5xl font-bold">M<span
+                    style="color:var(--primary-color)">P.</span></a>
+
+            <div class="hidden lg:flex nav-menu gap-6">
+                <a href="index.html" class="relative nav-link">Home</a>
+                <a href="services.html" class="relative nav-link">Services</a>
+                <a href="resume.html" class="relative nav-link">Resume</a>
+                <a href="work.html" class="relative nav-link">Work</a>
+            </div>
+
+            <button id="menu-btn" class="lg:hidden text-3xl text-white">
+                <i class="ri-menu-2-fill"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="lg:hidden bg-[#1c1b21] max-h-0 opacity-0 overflow-hidden transition-all duration-500 px-[8%]">
+            <ul class="space-y-4 py-0">
+                <li><a href="index.html" class="relative mobile-link">Home</a></li>
+                <li><a href="services.html" class="relative mobile-link">Services</a></li>
+                <li><a href="resume.html" class="relative mobile-link">Resume</a></li>
+                <li><a href="work.html" class="relative mobile-link">Work</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- ✅ HEADER -->
+    <header class="h-[100vh] flex flex-col  items-center relative">
+
+        <!-- glows -->
+        <div
+            class="absolute top-0 left-0 w-[300px] h-[300px] rounded-full bg-[var(--primary-light-1)] blur-[100px] -z-10">
+        </div>
+        <div
+            class="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[var(--primary-light-2)] blur-[100px] -z-10">
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl px-[8%] gap-8">
+            <!-- main content -->
+            <div class="flex flex-col lg:items-start items-center lg:text-left text-center flex-1">
+                <p class="text-lg text-gray-400">Computer Technician</p>
+
+                <h1 class="text-6xl font-bold mt-2">Hello I'm <span style="color:var(--primary-color)">Martín Pentito</span></h1>
+
+                <p class="text-gray-400 my-6 max-w-2xl">
+                    I'm someone who has found balance and fulfillment in combining the technical with the creative—whether it's through coding or artistic expression. I’m passionate about continuous learning and eager to be part of a computer science team where I can grow both professionally and personally. To me, life is a journey of constant learning: we fall, we get back up, and every challenge brings an opportunity to find a solution. I'm driven by curiosity, resilience, and the belief that both the human and technical sides of our work matter equally.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 items-center lg:items-start">
+                    <a class="border border-[var(--primary-color)] px-6 py-3 rounded hover:bg-[var(--primary-color)] transition">
+                        Download CV
+                    </a>
+
+                    <div class="flex gap-6 text-2xl lg:text-3xl social-icons">
+                        <i class="bi bi-github cursor-pointer hover:text-[var(--primary-color)] transition-colors transform hover:scale-110"></i>
+                        <i class="bi bi-linkedin cursor-pointer hover:text-[var(--primary-color)] transition-colors transform hover:scale-110"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- image -->
+            <div class="lg:flex-1 flex justify-center lg:justify-end">
+                <div class="hero-image-container relative w-64 h-64 lg:w-80 lg:h-80 rounded-full p-1 transition-all duration-300 hover:p-2">
+                    <div class="hero-image relative w-full h-full rounded-full overflow-hidden bg-gradient-to-r from-[var(--hero-image-from)] to-[var(--hero-image-to)]">
+                        <img src="./public/image/Hero.jpg" class="object-cover w-full h-full rounded-full" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- stats -->
+        <div class="w-full max-w-6xl px-[8%] mt-16 hidden lg:grid grid-cols-2 xl:grid-cols-4 gap-8 text-center">
+            <div class="p-4">
+                <h1 class="count text-6xl font-bold">0</h1>
+                <p class="text-gray-400 mt-2">Years of Experience</p>
+            </div>
+            <div class="p-4">
+                <h1 class="count text-6xl font-bold">0</h1>
+                <p class="text-gray-400 mt-2">Projects Completed</p>
+            </div>
+            <div class="p-4">
+                <h1 class="count text-6xl font-bold">0</h1>
+                <p class="text-gray-400 mt-2">Technologies Mastered</p>
+            </div>
+            <div class="p-4">
+                <h1 class="count text-6xl font-bold">0</h1>
+                <p class="text-gray-400 mt-2">Code Commits</p>
+            </div>
+        </div>
+
+    </header>
+
+    <script src="app.js"></script>
+
+    <!-- Contador animado -->
+    <script>
+        const values = [2, 3, 2, 250];
+        document.querySelectorAll(".count").forEach((el, i) => {
+            let c = 0;
+            const t = values[i];
+            const step = t / 100;
+            const update = () => {
+                c += step;
+                el.textContent = c >= t ? t : Math.floor(c);
+                if (c < t) requestAnimationFrame(update);
+            };
+            update();
+        });
+    </script>
+
+</body>
+
+</html>

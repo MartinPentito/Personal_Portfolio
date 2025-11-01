@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume — FolioHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- NAV -->
+    <!-- (Insert shared navbar here) -->
+    <nav class="w-full z-[999999] transition-all duration-300">
+        <div class="flex justify-between items-center px-[8%] lg:px-[16%] py-6">
+            <a href="index.html" class="text-5xl font-bold">M<span style="color:var(--primary-color)">P.</span></a>
+
+            <div class="hidden lg:flex nav-menu gap-6">
+                <a href="index.html" class="relative nav-link">Home</a>
+                <a href="services.html" class="relative nav-link">Services</a>
+                <a href="resume.html" class="relative nav-link">Resume</a>
+                <a href="work.html" class="relative nav-link">Work</a>
+            </div>
+
+            <button id="menu-btn" class="lg:hidden text-3xl text-white">
+                <i class="ri-menu-2-fill"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="lg:hidden bg-[#1c1b21] max-h-0 opacity-0 overflow-hidden transition-all duration-500 px-[8%]">
+            <ul class="space-y-4 py-0">
+                <li><a href="index.html" class="relative mobile-link">Home</a></li>
+                <li><a href="services.html" class="relative mobile-link">Services</a></li>
+                <li><a href="resume.html" class="relative mobile-link">Resume</a></li>
+                <li><a href="work.html" class="relative mobile-link">Work</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="px-[8%] lg:px-[16%] py-20 text-white">
+        <h2 class="text-5xl font-bold mb-10">Resume</h2>
+
+        <div class="grid md:grid-cols-3 gap-12">
+
+            <!-- Tabs -->
+            <div>
+                <p class="text-gray-400 mb-6">Why hire me?</p>
+                <div id="resume-tabs" class="flex flex-col gap-4">
+                    <button data-tab="Experience"
+                        class="resume-btn bg-black hover:bg-[var(--primary-color)] text-white px-4 py-3 rounded flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
+                        <i class="bi bi-briefcase-fill"></i>
+                        Experience
+                    </button>
+                    <button data-tab="Education"
+                        class="resume-btn bg-black hover:bg-[var(--primary-color)] text-white px-4 py-3 rounded flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        Education
+                    </button>
+                    <button data-tab="Skills"
+                        class="resume-btn bg-black hover:bg-[var(--primary-color)] text-white px-4 py-3 rounded flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
+                        <i class="bi bi-code-square"></i>
+                        Skills
+                    </button>
+                    <button data-tab="About"
+                        class="resume-btn bg-black hover:bg-[var(--primary-color)] text-white px-4 py-3 rounded flex items-center gap-3 transition-all duration-300 hover:translate-x-2">
+                        <i class="bi bi-person-fill"></i>
+                        About Me
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div id="resume-content" class="md:col-span-2 text-gray-300 transition-all duration-200">
+                <!-- Content will be loaded here -->
+            </div>
+
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+        const resumeContent = {
+            Experience: `
+                <div class='space-y-6'>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-building text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Tecnico / Analista</h3>
+                        </div>
+                        <p class='text-gray-400'>2025 - Present | TecBA (GOBIERNO DE LA CIUDAD DE BUENOS AIRES)</p>
+                        <p class='mt-2'>Bases de datos - Apache - Ejecucion de Scripts</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-building text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Web Developer</h3>
+                        </div>
+                        <p class='text-gray-400'>2024 - 2025 | GreenOlive/CafeMaceda/Laincop (OLIVOS DEL SUR SA)</p>
+                        <p class='mt-2'>Web design and programming with WordPress, management of three websites, and product pricing. Data entry and database management in Access. Launch of the Laincop website through Tienda Nube, including domain purchase and integration.</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-building text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Bar manager</h3>
+                        </div>
+                        <p class='text-gray-400'>2023 - 2024 | Galpon Plaza (CERVECERIA S.R.L)</p>
+                        <p class='mt-2'>Waiter, Bartender, Cashier, Supplier Management.</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-building text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Systems Analyst</h3>
+                        </div>
+                        <p class='text-gray-400'>2021 - 2023 | Cerrocred (FINANCOMP S A)</p>
+                        <p class='mt-2'>Systems</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-building text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Customs Broker Assistance</h3>
+                        </div>
+                        <p class='text-gray-400'>2020 - 2021 | Estudio Vilches</p>
+                        <p class='mt-2'>Performing administrative tasks, bill of lading control, and courier services</p>
+                    </div>
+                </div>`,
+            Education: `
+                <div class='space-y-6'>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-mortarboard text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Udemy</h3>
+                        </div>
+                        <p class='text-gray-400'>2025 | Computacion Completo con Windows</p>
+                        <p class='mt-2'>Paquete Office - Bases de Datos - HTML - PYTHON - Sistemas de Informacion - Introduccion a Diseño Grafico</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-mortarboard text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Capacitarte</h3>
+                        </div>
+                        <p class='text-gray-400'>2025 | WordPress</p>
+                        <p class='mt-2'>Wordpress - Funcionalidades - Plugins - Cortafuegos - Dominios - XAMPP - PHPMyAdmin</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-mortarboard text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>UTN</h3>
+                        </div>
+                        <p class='text-gray-400'>2024 | Maquetado Web</p>
+                        <p class='mt-2'>HTML-CSS + Registro de dominio y Servidores Web + Maquetado Web + Responsive Design + Git/GitHub</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-mortarboard text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>IEEE - ITBA</h3>
+                        </div>
+                        <p class='text-gray-400'>2021 | Introduccion a Python</p>
+                        <p class='mt-2'>Introducción a la programación en Python, Variables, Operadores, Control de flujo (if, while, for), Funciones - Tipos de datos (int, float, string, boolean), Operaciones con tipos de datos, Listas, Operaciones con listas, Manipulación de archivos de texto - Estructuras de datos (Dictionary, Set, Tuple), Operaciones con estructuras de datos, Introducción a las librerías, Casos de aplicación </p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-mortarboard text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Cens 38</h3>
+                        </div>
+                        <p class='text-gray-400'>2015 - 2017 | Tecnico Informatico</p>
+                        <p class='mt-2'>Tecnico en informatica</p>
+                    </div>
+                    <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                        <div class='flex items-center gap-2 mb-2'>
+                            <i class='bi bi-mortarboard text-[var(--primary-color)]'></i>
+                            <h3 class='font-bold'>Otto Krause</h3>
+                        </div>
+                        <p class='text-gray-400'>2011 - 2015 | Tech Institute</p>
+                        <p class='mt-2'>Tecnico en Electronica</p>
+                    </div>
+                </div>`,
+            Skills: `
+                <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
+                    <div class='skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center'>
+                        <i class='bx bxl-html5'></i>
+                        <span class='skill-name font-medium'>HTML</span>
+                    </div>
+                    <div class='skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center'>
+                        <i class='bx bxl-css3'></i>
+                        <span class='skill-name font-medium'>CSS</span>
+                    </div>
+                    <div class='skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center'>
+                        <i class='bx bxl-javascript'></i>
+                        <span class='skill-name font-medium'>JavaScript</span>
+                    </div>
+                    <div class='skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center'>
+                        <i class='bx bxs-data'></i>
+                        <span class='skill-name font-medium'>SQL</span>
+                    </div>
+                    <div class='skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center'>
+                        <i class='bx bxl-python'></i>
+                        <span class='skill-name font-medium'>Python</span>
+                    </div>
+                     <div class='skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center'>
+                        <i class='bx bxl-github'></i>
+                        <span class='skill-name font-medium'>GitHub</span>
+                    </div>
+                </div>`,
+            About: `
+                <div class='p-4 bg-black bg-opacity-50 rounded-lg hover:bg-[var(--primary-color)] hover:bg-opacity-10 transition-all duration-300'>
+                    <div class='flex items-center gap-2 mb-3'>
+                        <i class='bi bi-person text-[var(--primary-color)]'></i>
+                        <h3 class='font-bold'>About Me</h3>
+                    </div>
+                    <p class='text-gray-400 leading-relaxed'>
+                        A person passionate about computers and music. Responsible and self-taught, characteristics that have defined me since childhood thanks to my parents' upbringing. Always seeking experiences that push me out of my comfort zone.I enjoy teamwork as long as there is respect and empathy.
+                    </p>
+                </div>`
+        };
+
+        // Set initial active tab
+        document.querySelector('.resume-btn').classList.add('bg-[var(--primary-color)]', 'text-white');
+        document.getElementById('resume-content').innerHTML = resumeContent['Experience'];
+
+        document.querySelectorAll('.resume-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.querySelectorAll('.resume-btn').forEach(b => {
+                    b.classList.remove('bg-[var(--primary-color)]', 'text-white');
+                    b.classList.add('bg-black');
+                });
+                btn.classList.add('bg-[var(--primary-color)]', 'text-white');
+                const tab = btn.dataset.tab;
+
+                // Add fade out effect
+                const content = document.getElementById('resume-content');
+                content.style.opacity = '0';
+                content.style.transform = 'translateY(10px)';
+
+                setTimeout(() => {
+                    content.innerHTML = resumeContent[tab];
+                    content.style.opacity = '1';
+                    content.style.transform = 'translateY(0)';
+                }, 200);
+            };
+        });
+    </script>
+</body>
+
+</html>
