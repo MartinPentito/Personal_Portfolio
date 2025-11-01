@@ -105,6 +105,29 @@ a, button, .resume-btn, .nav-link, .mobile-link {
   from, to { opacity: 1; }
   50% { opacity: 0; }
 }
+/* SKILLS CAROUSEL */
+.skills-carousel { padding: 0.5rem 0; }
+.skills-track {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  /* animate translateX to create marquee */
+  animation: marquee 3.5s linear infinite;
+}
+
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-40%); }
+}
+
+/* make carousel take full width on small screens and appear below image */
+@media (max-width: 1023px) {
+  .skills-carousel { margin-top: 1rem; }
+}
 /* TYPING EFFECT */
 .typing-cursor {
   animation: blink 1s step-end infinite;

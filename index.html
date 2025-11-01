@@ -12,6 +12,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="styles.css" />
 </head>
@@ -61,7 +62,7 @@
             class="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[var(--primary-light-2)] blur-[100px] -z-10">
         </div>
 
-        <div class="flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl px-[8%] gap-8">
+        <div class="flex flex-col items-center justify-between w-full  px-[8%] gap-8">
             <!-- main content -->
             <div class="flex flex-col lg:items-start items-center lg:text-left text-center flex-1">
                 <p class="text-lg text-gray-400">
@@ -99,10 +100,51 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Skills carousel: on desktop placed between content and image (lg:order-2), on mobile it will be below the image (order-3) -->
+            <div class="w-full lg:w-1/3 order-3 lg:order-2 flex items-center justify-center">
+                <div class="skills-carousel w-full max-w-xl overflow-hidden">
+                    <div class="skills-track flex gap-6 items-center">
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-html5 text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">HTML</span>
+                        </div>
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-css3 text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">CSS</span>
+                        </div>
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-javascript text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">JavaScript</span>
+                        </div>
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxs-data text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">SQL</span>
+                        </div>
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-python text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">Python</span>
+                        </div>
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-github text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">GitHub</span>
+                        </div>
+                        <!-- duplicate items to create smooth loop -->
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-html5 text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">HTML</span>
+                        </div>
+                        <div class="skill-badge p-3 bg-black bg-opacity-30 rounded-lg border border-transparent flex flex-col items-center gap-2 justify-center">
+                            <i class="bx bxl-css3 text-[var(--primary-color)]" style="font-size:2rem"></i>
+                            <span class="skill-name font-medium">CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- stats -->
-        <div class="w-full max-w-6xl px-[8%] mt-16 hidden lg:grid grid-cols-2 xl:grid-cols-4 gap-8 text-center">
+        <div class="w-full px-[8%] mt-16 hidden lg:grid grid-cols-2 xl:grid-cols-4 gap-8 text-center">
             <div class="p-4">
                 <h1 class="count text-6xl font-bold">0</h1>
                 <p class="text-gray-400 mt-2">Years of Experience</p>
@@ -120,6 +162,8 @@
                 <p class="text-gray-400 mt-2">Code Commits</p>
             </div>
         </div>
+
+
 
     </header>
 
